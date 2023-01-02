@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:carousel_pro/carousel_pro.dart';
 import 'package:ecommerce/Pages/searchpage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class _HomePageState extends State<HomePage> {
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(78, 172, 206, 226),
+        backgroundColor: const Color.fromARGB(78, 172, 206, 226),
         actions: [
           IconButton(
               onPressed: (() => const SearchPage()),
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       drawer: Drawer(
-          backgroundColor: Colors.amber[50],
+          backgroundColor: Color.fromARGB(255, 248, 243, 220),
           child: Column(
             children: [
               const SizedBox(
@@ -45,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.all(5),
                   decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(50)),
-                      color: Colors.amber),
+                      color: Color.fromARGB(255, 210, 214, 214)),
                   child: Container(
                       padding: EdgeInsets.all(20),
                       height: h * 0.3,
@@ -58,24 +59,24 @@ class _HomePageState extends State<HomePage> {
                               backgroundColor: Colors.black,
                               child: Icon(
                                 Icons.person,
-                                color: Color.fromARGB(206, 194, 211, 221),
+                                color: Colors.white,
                                 size: 70,
                               ),
                             ),
                           ),
                           Container(
                             padding: EdgeInsets.only(top: h * 0.02),
-                            child: Text(
+                            child: const Text(
                               'Siddhi Shah',
                               style: TextStyle(fontSize: 25),
                             ),
                           ),
                           Container(
-                            child: Text(
+                            child: const Text(
                               '+91-1234567890',
                               style: TextStyle(
                                   fontSize: 17,
-                                  color: Color.fromARGB(120, 37, 38, 39)),
+                                  color: Color.fromARGB(169, 37, 38, 39)),
                             ),
                           ),
                         ],
@@ -141,7 +142,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: h * 0.16,
                 child: Container(
-                  color: Colors.amber[50],
+                  color: Color.fromARGB(255, 248, 243, 220),
                 ),
               ),
               ListTile(
@@ -174,8 +175,116 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           )),
+      body: SingleChildScrollView(
+          child: Column(
+        children: [
+          Container(
+              padding: const EdgeInsets.only(top: 5),
+              height: h * 0.1,
+              width: w,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    child: FloatingActionButton(
+                      onPressed: (() {}),
+                      elevation: 0,
+                      backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    child: FloatingActionButton(
+                      onPressed: (() {}),
+                      elevation: 0,
+                      backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    child: FloatingActionButton(
+                      onPressed: (() {}),
+                      elevation: 0,
+                      backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    child: FloatingActionButton(
+                      onPressed: (() {}),
+                      elevation: 0,
+                      backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    child: FloatingActionButton(
+                      onPressed: (() {}),
+                      elevation: 0,
+                      backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    child: FloatingActionButton(
+                      onPressed: (() {}),
+                      elevation: 0,
+                      backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                    ),
+                  ),
+                ],
+              )),
+          Container(
+              height: h * 0.25,
+              width: w * 0.9,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(h * 0.06),
+                color: Colors.amber,
+              ),
+              child: Center(
+                child: ListView(
+                  children: [
+                    Container(
+                      child: Carousel(
+                        dotSize: 6,
+                        dotSpacing: 15,
+                        dotPosition: DotPosition.bottomCenter,
+                        images: [
+                          Image.asset(
+                            "img/user.png",
+                            fit: BoxFit.cover,
+                          ),
+                          Image.asset(
+                            "img/user.png",
+                            fit: BoxFit.cover,
+                          ),
+                          Image.asset(
+                            "img/user.png",
+                            fit: BoxFit.cover,
+                          ),
+                          Image.asset(
+                            "img/user.png",
+                            fit: BoxFit.cover,
+                          ),
+                          Image.asset(
+                            "img/user.png",
+                            fit: BoxFit.cover,
+                          ),
+                          Image.asset(
+                            "img/user.png",
+                            fit: BoxFit.cover,
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ))
+        ],
+      )),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color.fromARGB(78, 172, 206, 226),
         ),
         height: h * 0.07,
