@@ -1,3 +1,4 @@
+import 'package:ecommerce/Pages/categoriespage.dart';
 import 'package:ecommerce/Pages/homepage.dart';
 import 'package:flutter/material.dart';
 

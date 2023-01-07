@@ -34,7 +34,12 @@ class _HomePageState extends State<HomePage> {
               onPressed: (() => const SearchPage()),
               icon: const Icon(Icons.search)),
           IconButton(
-            onPressed: (() {}),
+            onPressed: (() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SearchPage()),
+              );
+            }),
             icon: Icon(Icons.favorite),
           ),
           IconButton(onPressed: (() {}), icon: const Icon(Icons.shopping_cart))
@@ -62,8 +67,11 @@ class _HomePageState extends State<HomePage> {
                       width: w * 0.7,
                       child: ListView(
                         children: [
+                          // ignore: avoid_unnecessary_containers
                           Container(
-                            child: const CircleAvatar(
+                              child: const Hero(
+                            tag: 'person1',
+                            child: CircleAvatar(
                               radius: 60,
                               backgroundColor: Colors.black,
                               child: Icon(
@@ -72,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                                 size: 70,
                               ),
                             ),
-                          ),
+                          )),
                           Container(
                             padding: EdgeInsets.only(top: h * 0.02),
                             child: const Text(
@@ -94,25 +102,36 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 contentPadding: EdgeInsets.only(left: w * 0.05),
-                leading: const Icon(
-                  Icons.category_outlined,
-                  size: 27,
+                leading: const Hero(
+                  tag: 'cat2',
+                  child: Icon(
+                    Icons.category_outlined,
+                    size: 27,
+                  ),
                 ),
                 title: const Text(
                   "Categories",
                   style: TextStyle(fontSize: 15),
                 ),
-                onTap: (() {
-                  const Categories();
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) {
+                      return const Categories();
+                    }),
+                  );
 
                   // open categories
-                }),
+                },
               ),
               ListTile(
                 contentPadding: EdgeInsets.only(left: w * 0.05),
-                leading: const Icon(
-                  Icons.shopping_bag_outlined,
-                  size: 27,
+                leading: const Hero(
+                  tag: 'shop3',
+                  child: Icon(
+                    Icons.shopping_bag_outlined,
+                    size: 27,
+                  ),
                 ),
                 title: const Text(
                   "Orders",
@@ -124,9 +143,12 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 contentPadding: EdgeInsets.only(left: w * 0.05),
-                leading: const Icon(
-                  Icons.account_balance_wallet_outlined,
-                  size: 27,
+                leading: const Hero(
+                  tag: 'order4',
+                  child: Icon(
+                    Icons.account_balance_wallet_outlined,
+                    size: 27,
+                  ),
                 ),
                 title: const Text(
                   "Wallet",
@@ -138,9 +160,12 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 contentPadding: EdgeInsets.only(left: w * 0.05),
-                leading: const Icon(
-                  Icons.local_offer_outlined,
-                  size: 27,
+                leading: const Hero(
+                  tag: 'wallet5',
+                  child: Icon(
+                    Icons.local_offer_outlined,
+                    size: 27,
+                  ),
                 ),
                 title: const Text(
                   "My Offers",
@@ -158,9 +183,12 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 contentPadding: EdgeInsets.only(left: w * 0.05),
-                leading: const Icon(
-                  Icons.contact_support_outlined,
-                  size: 25,
+                leading: const Hero(
+                  tag: 'offer6',
+                  child: Icon(
+                    Icons.contact_support_outlined,
+                    size: 25,
+                  ),
                 ),
                 title: const Text(
                   "Contact Us",
@@ -172,9 +200,12 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 contentPadding: EdgeInsets.only(left: w * 0.05),
-                leading: const Icon(
-                  Icons.logout,
-                  size: 25,
+                leading: const Hero(
+                  tag: 'logout7',
+                  child: Icon(
+                    Icons.logout,
+                    size: 25,
+                  ),
                 ),
                 title: const Text(
                   "LogOut",
@@ -290,10 +321,13 @@ class _HomePageState extends State<HomePage> {
             ),
             Spacer(),
             IconButton(
-              onPressed: (() {
-                Categories();
-              }),
-              icon: const Icon(Icons.category_outlined),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Categories()),
+                );
+              },
+              icon: const Icon(Icons.category),
               iconSize: 30,
             ),
             Spacer(),
