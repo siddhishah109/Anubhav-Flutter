@@ -1,7 +1,7 @@
 # ecommerce
 
 A new Flutter project.
-new 
+new, a Siddhi project
 
 ## Getting Started
 
