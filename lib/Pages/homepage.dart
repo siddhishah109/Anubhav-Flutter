@@ -313,6 +313,14 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
+              height: h * 0.25,
+                width: w * 0.9,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(h * 0.06),
+                  color: Colors.black,
+                ),
+            ),
+            Container(
                 height: h * 0.25,
                 width: w * 0.9,
                 decoration: BoxDecoration(
@@ -338,7 +346,7 @@ class _HomePageState extends State<HomePage> {
                           ))
                       .toList(),
                 ))),
-            Container()
+            
           ],
         ),
       )),
