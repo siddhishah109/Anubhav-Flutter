@@ -40,7 +40,8 @@ class _HomePageState extends State<HomePage> {
                 MaterialPageRoute(builder: (context) => const SearchPage()),
               );
             }),
-            icon: Icon(Icons.favorite),
+            icon: const Icon(Icons.favorite),
+            color: const Color.fromARGB(255, 244, 54, 117),
           ),
           IconButton(onPressed: (() {}), icon: const Icon(Icons.shopping_cart))
         ],
@@ -70,29 +71,33 @@ class _HomePageState extends State<HomePage> {
                           // ignore: avoid_unnecessary_containers
                           Container(
                               child: const Hero(
-                            tag: 'person1',
-                            child: CircleAvatar(
-                              radius: 60,
-                              backgroundColor: Colors.black,
-                              child: Icon(
-                                Icons.person,
-                                color: Colors.white,
-                                size: 70,
-                              ),
-                            ),
-                          )),
+                                  tag: 'person1',
+                                  child: CircleAvatar(
+                                    radius: 80.5,
+                                    backgroundColor: Colors.black,
+                                    child: CircleAvatar(
+                                      radius: 80,
+                                      // backgroundColor: Colors.black,
+                                      // child: ImageIcon(
+                                      //   AssetImage('img/anubhavicon.png'),
+                                      //   size: 1000,
+                                      // )
+                                      backgroundImage:
+                                          AssetImage('img/anubhavicon.png'),
+                                    ),
+                                  ))),
                           Container(
                             padding: EdgeInsets.only(top: h * 0.02),
                             child: const Text(
                               'Siddhi Shah',
-                              style: TextStyle(fontSize: 25),
+                              style: TextStyle(fontSize: 20),
                             ),
                           ),
                           Container(
                             child: const Text(
                               '+91-1234567890',
                               style: TextStyle(
-                                  fontSize: 17,
+                                  fontSize: 15,
                                   color: Color.fromARGB(169, 37, 38, 39)),
                             ),
                           ),
@@ -176,10 +181,27 @@ class _HomePageState extends State<HomePage> {
                 }),
               ),
               SizedBox(
-                height: h * 0.16,
+                height: h * 0.14,
                 child: Container(
                   color: Color.fromARGB(255, 241, 241, 232),
                 ),
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: w * 0.1),
+                    child: const Text(
+                      "Made with  ",
+                      style: TextStyle(
+                        color: Color.fromARGB(230, 141, 140, 141),
+                      ),
+                    ),
+                  ),
+                  const Icon(
+                    Icons.favorite,
+                    color: Color.fromARGB(230, 141, 140, 141),
+                  ),
+                ],
               ),
               ListTile(
                 contentPadding: EdgeInsets.only(left: w * 0.05),
@@ -218,93 +240,107 @@ class _HomePageState extends State<HomePage> {
             ],
           )),
       body: SingleChildScrollView(
-          child: Column(
-        children: [
-          Container(
-              padding: const EdgeInsets.only(top: 5),
-              height: h * 0.1,
+          child: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('img/back.png'), fit: BoxFit.fill),
+        ),
+        child: Column(
+          children: [
+            Container(
+                padding: const EdgeInsets.only(top: 5),
+                height: h * 0.1,
+                width: w,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      child: FloatingActionButton(
+                        onPressed: (() {}),
+                        elevation: 0,
+                        backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      child: FloatingActionButton(
+                        onPressed: (() {}),
+                        elevation: 0,
+                        backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      child: FloatingActionButton(
+                        onPressed: (() {}),
+                        elevation: 0,
+                        backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      child: FloatingActionButton(
+                        onPressed: (() {}),
+                        elevation: 0,
+                        backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      child: FloatingActionButton(
+                        onPressed: (() {}),
+                        elevation: 0,
+                        backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      child: FloatingActionButton(
+                        onPressed: (() {}),
+                        elevation: 0,
+                        backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                      ),
+                    ),
+                  ],
+                )),
+            Container(
+              height: h * 0.27,
               width: w,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    child: FloatingActionButton(
-                      onPressed: (() {}),
-                      elevation: 0,
-                      backgroundColor: const Color.fromARGB(255, 27, 27, 26),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    child: FloatingActionButton(
-                      onPressed: (() {}),
-                      elevation: 0,
-                      backgroundColor: const Color.fromARGB(255, 27, 27, 26),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    child: FloatingActionButton(
-                      onPressed: (() {}),
-                      elevation: 0,
-                      backgroundColor: const Color.fromARGB(255, 27, 27, 26),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    child: FloatingActionButton(
-                      onPressed: (() {}),
-                      elevation: 0,
-                      backgroundColor: const Color.fromARGB(255, 27, 27, 26),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    child: FloatingActionButton(
-                      onPressed: (() {}),
-                      elevation: 0,
-                      backgroundColor: const Color.fromARGB(255, 27, 27, 26),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    child: FloatingActionButton(
-                      onPressed: (() {}),
-                      elevation: 0,
-                      backgroundColor: const Color.fromARGB(255, 27, 27, 26),
-                    ),
-                  ),
-                ],
-              )),
-          Container(
-              height: h * 0.25,
-              width: w * 0.9,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(h * 0.06),
-                color: Colors.transparent,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('img/banner1.png'), fit: BoxFit.fill),
               ),
-              child: Center(
-                  child: CarouselSlider(
-                options: CarouselOptions(
-                  autoPlay: true,
-                  aspectRatio: 2.0,
-                  enlargeCenterPage: true,
+            ),
+            Container(
+                height: h * 0.25,
+                width: w * 0.9,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(h * 0.06),
+                  color: Colors.transparent,
                 ),
-                items: imgList
-                    .map((item) => Container(
-                          child: Center(
-                              child: Image.network(
-                            item,
-                            fit: BoxFit.cover,
-                            width: w * 0.8,
-                            height: h * 0.25,
-                          )),
-                        ))
-                    .toList(),
-              ))),
-          Container()
-        ],
+                child: Center(
+                    child: CarouselSlider(
+                  options: CarouselOptions(
+                    autoPlay: true,
+                    aspectRatio: 2.0,
+                    enlargeCenterPage: true,
+                  ),
+                  items: imgList
+                      .map((item) => Container(
+                            child: Center(
+                                child: Image.network(
+                              item,
+                              fit: BoxFit.cover,
+                              width: w * 0.8,
+                              height: h * 0.25,
+                            )),
+                          ))
+                      .toList(),
+                ))),
+            Container()
+          ],
+        ),
       )),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
