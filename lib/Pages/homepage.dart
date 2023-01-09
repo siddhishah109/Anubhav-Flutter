@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:card_swiper/card_swiper.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce/Pages/categoriespage.dart';
 
@@ -14,6 +15,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var images;
+
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -30,6 +33,19 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(78, 172, 206, 226),
         actions: [
+          Spacer(
+            flex: 1,
+          ),
+          ClipOval(
+            child: Image.asset(
+              'img/anubhavicon.png',
+              height: 45,
+              width: 45,
+            ),
+          ),
+          Spacer(),
+          Spacer(),
+          Spacer(),
           IconButton(
               onPressed: (() => const SearchPage()),
               icon: const Icon(Icons.search)),
@@ -312,14 +328,26 @@ class _HomePageState extends State<HomePage> {
                     image: AssetImage('img/banner1.png'), fit: BoxFit.fill),
               ),
             ),
+            SizedBox(
+              height: h * 0.02,
+            ),
             Container(
-              
               height: h * 0.25,
-                width: w * 0.9,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(h * 0.06),
-                  color: Colors.black,
-                ),
+              width: w * 0.9,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(h * 0.06),
+                color: Colors.black,
+              ),
+              child: Swiper(
+                itemCount: 5,
+                itemBuilder: ((context, index) {
+                  final image = images[index];
+                  return Image.asset(
+                    image,
+                    fit: BoxFit.fill,
+                  );
+                }),
+              ),
             ),
             Container(
                 height: h * 0.25,
@@ -347,7 +375,6 @@ class _HomePageState extends State<HomePage> {
                           ))
                       .toList(),
                 ))),
-            
           ],
         ),
       )),
