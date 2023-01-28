@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce/Pages/categoriespage.dart';
-
+import 'package:ecommerce/swiperwidgwt.dart';
 import 'package:ecommerce/Pages/searchpage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +15,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var images;
+  List<String> images = [
+    'images/b1.png',
+    'images/b2.png',
+    'images/b3.png',
+    'images/b4.png',
+    'images/b5.png',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +39,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(78, 172, 206, 226),
         actions: [
-          Spacer(
+          const Spacer(
             flex: 1,
           ),
           ClipOval(
@@ -43,12 +49,14 @@ class _HomePageState extends State<HomePage> {
               width: 45,
             ),
           ),
-          Spacer(),
-          Spacer(),
-          Spacer(),
+          const Spacer(),
+          const Spacer(),
+          const Spacer(),
           IconButton(
-              onPressed: (() => const SearchPage()),
-              icon: const Icon(Icons.search)),
+            onPressed: (() => const SearchPage()),
+            icon: const Icon(Icons.search),
+            iconSize: w * 0.08,
+          ),
           IconButton(
             onPressed: (() {
               Navigator.push(
@@ -58,12 +66,17 @@ class _HomePageState extends State<HomePage> {
             }),
             icon: const Icon(Icons.favorite),
             color: const Color.fromARGB(255, 244, 54, 117),
+            iconSize: w * 0.08,
           ),
-          IconButton(onPressed: (() {}), icon: const Icon(Icons.shopping_cart))
+          IconButton(
+            onPressed: (() {}),
+            icon: const Icon(Icons.shopping_cart),
+            iconSize: w * 0.07,
+          )
         ],
       ),
       drawer: Drawer(
-          backgroundColor: Color.fromARGB(255, 241, 241, 232),
+          backgroundColor: const Color.fromARGB(255, 241, 241, 232),
           child: Column(
             children: [
               const SizedBox(
@@ -74,12 +87,12 @@ class _HomePageState extends State<HomePage> {
                 width: w * 0.8,
                 child: DrawerHeader(
                     child: Container(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(50)),
                       color: Color.fromARGB(255, 210, 214, 214)),
                   child: Container(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       height: h * 0.3,
                       width: w * 0.7,
                       child: ListView(
@@ -199,7 +212,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: h * 0.14,
                 child: Container(
-                  color: Color.fromARGB(255, 241, 241, 232),
+                  color: const Color.fromARGB(255, 241, 241, 232),
                 ),
               ),
               Row(
@@ -276,6 +289,8 @@ class _HomePageState extends State<HomePage> {
                         onPressed: (() {}),
                         elevation: 0,
                         backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                        // child:
+                        //     const Image(image: AssetImage("img/shoesicon.png")),
                       ),
                     ),
                     Container(
@@ -332,23 +347,37 @@ class _HomePageState extends State<HomePage> {
               height: h * 0.02,
             ),
             Container(
-              height: h * 0.25,
-              width: w * 0.9,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(h * 0.06),
-                color: Colors.black,
-              ),
-              child: Swiper(
-                itemCount: 5,
-                itemBuilder: ((context, index) {
-                  final image = images[index];
-                  return Image.asset(
-                    image,
-                    fit: BoxFit.fill,
-                  );
-                }),
-              ),
-            ),
+                height: h * 0.25,
+                width: w * 0.9,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(h * 0.06),
+                  color: Colors.transparent,
+                ),
+                child: Container(
+                  height: h * 0.25,
+                  width: w * 0.9,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(h * 0.06),
+                  ),
+                  child: Swiper(
+                    itemCount: 5,
+                    itemBuilder: ((context, index) {
+                      // final image = images[index];
+                      // return Image.asset(
+                      //   image,
+                      //   height: h * 25,
+                      //   width: w * 0.9,
+                      // );
+                      return swiperwidgwd();
+                    }),
+                    autoplay: true,
+                    pagination: SwiperPagination(
+                        alignment: Alignment.bottomCenter,
+                        builder: DotSwiperPaginationBuilder(
+                            color: Colors.white,
+                            activeColor: Colors.grey[400])),
+                  ),
+                )),
             Container(
                 height: h * 0.25,
                 width: w * 0.9,
@@ -391,7 +420,7 @@ class _HomePageState extends State<HomePage> {
               icon: const Icon(Icons.home),
               iconSize: 30,
             ),
-            Spacer(),
+            const Spacer(),
             IconButton(
               onPressed: () {
                 Navigator.push(
@@ -402,19 +431,19 @@ class _HomePageState extends State<HomePage> {
               icon: const Icon(Icons.category),
               iconSize: 30,
             ),
-            Spacer(),
+            const Spacer(),
             IconButton(
               onPressed: (() {}),
               icon: const Icon(Icons.person),
               iconSize: 30,
             ),
-            Spacer(),
+            const Spacer(),
             IconButton(
               onPressed: (() {}),
               icon: const Icon(Icons.account_balance_wallet_outlined),
               iconSize: 30,
             ),
-            Spacer(),
+            const Spacer(),
             IconButton(
               onPressed: (() {}),
               icon: const Icon(Icons.shopping_bag_outlined),
