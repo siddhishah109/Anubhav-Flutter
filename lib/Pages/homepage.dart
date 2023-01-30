@@ -277,60 +277,78 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             Container(
-                padding: const EdgeInsets.only(top: 5),
-                height: h * 0.1,
+                color: Colors.black26,
+                height: h * 0.09,
                 width: w,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
                     Container(
-                      padding: const EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(6),
                       child: FloatingActionButton(
                         onPressed: (() {}),
                         elevation: 0,
                         backgroundColor: const Color.fromARGB(255, 27, 27, 26),
-                        // child:
-                        //     const Image(image: AssetImage("img/shoesicon.png")),
+                        child: const ClipOval(
+                            child:
+                                Image(image: AssetImage("img/shoesicon.png"))),
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(6),
                       child: FloatingActionButton(
                         onPressed: (() {}),
                         elevation: 0,
                         backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                        child: const ClipOval(
+                            child:
+                                Image(image: AssetImage("img/womenicon.png"))),
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(6),
                       child: FloatingActionButton(
                         onPressed: (() {}),
                         elevation: 0,
                         backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                        child: const ClipOval(
+                            child: Image(image: AssetImage("img/menicon.png"))),
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(6),
                       child: FloatingActionButton(
                         onPressed: (() {}),
                         elevation: 0,
                         backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                        child: const ClipOval(
+                            child: Image(
+                                image: AssetImage("img/jewellleryicon.png"))),
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.all(12),
+                      // decoration: BoxDecoration(
+                      //     border: Border.all(width: 5, color: Colors.black)),
+                      padding: const EdgeInsets.all(6),
                       child: FloatingActionButton(
                         onPressed: (() {}),
                         elevation: 0,
                         backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                        child: const ClipOval(
+                            child: Image(image: AssetImage("img/accicon.png"))),
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(6),
                       child: FloatingActionButton(
                         onPressed: (() {}),
                         elevation: 0,
                         backgroundColor: const Color.fromARGB(255, 27, 27, 26),
+                        child: const ClipOval(
+                            clipBehavior: Clip.antiAlias,
+                            child: Image(
+                              image: AssetImage("img/bagicon.png"),
+                            )),
                       ),
                     ),
                   ],
@@ -353,30 +371,27 @@ class _HomePageState extends State<HomePage> {
                   borderRadius: BorderRadius.circular(h * 0.06),
                   color: Colors.transparent,
                 ),
-                child: Container(
-                  height: h * 0.25,
-                  width: w * 0.9,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(h * 0.06),
-                  ),
-                  child: Swiper(
-                    itemCount: 5,
-                    itemBuilder: ((context, index) {
-                      // final image = images[index];
-                      // return Image.asset(
-                      //   image,
-                      //   height: h * 25,
-                      //   width: w * 0.9,
-                      // );
-                      return swiperwidgwd();
-                    }),
-                    autoplay: true,
-                    pagination: SwiperPagination(
-                        alignment: Alignment.bottomCenter,
-                        builder: DotSwiperPaginationBuilder(
-                            color: Colors.white,
-                            activeColor: Colors.grey[400])),
-                  ),
+                child: Swiper(
+                  itemCount: 5,
+                  itemBuilder: ((context, index) {
+                    final image = images[index];
+                    return Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(h * 0.07),
+                          color: Colors.transparent,
+                          image: DecorationImage(
+                            image: AssetImage(
+                              image,
+                            ),
+                          )),
+                    );
+                    // return swiperwidgwd();
+                  }),
+                  autoplay: true,
+                  pagination: SwiperPagination(
+                      alignment: Alignment.bottomCenter,
+                      builder: DotSwiperPaginationBuilder(
+                          color: Colors.white, activeColor: Colors.grey[400])),
                 )),
             Container(
                 height: h * 0.25,
@@ -394,63 +409,71 @@ class _HomePageState extends State<HomePage> {
                   ),
                   items: imgList
                       .map((item) => Container(
-                            child: Center(
+                            child: ClipRRect(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(w * 0.09)),
                                 child: Image.network(
-                              item,
-                              fit: BoxFit.cover,
-                              width: w * 0.8,
-                              height: h * 0.25,
-                            )),
+                                  item,
+                                  fit: BoxFit.cover,
+                                  width: w * 0.8,
+                                  height: h * 0.25,
+                                )),
                           ))
                       .toList(),
                 ))),
           ],
         ),
       )),
-      bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          color: Color.fromARGB(78, 172, 206, 226),
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+            // canvasColor: Colors.amber,
+            // primaryColor: Colors.red,
+            ),
+        child: Container(
+          decoration: const BoxDecoration(
+            color: Color.fromARGB(78, 172, 206, 226),
+          ),
+          height: h * 0.07,
+          child: BottomAppBar(
+              child: Row(
+            children: [
+              IconButton(
+                onPressed: (() {}),
+                icon: const Icon(Icons.home),
+                iconSize: 30,
+              ),
+              const Spacer(),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Categories()),
+                  );
+                },
+                icon: const Icon(Icons.category),
+                iconSize: 30,
+              ),
+              const Spacer(),
+              IconButton(
+                onPressed: (() {}),
+                icon: const Icon(Icons.person),
+                iconSize: 30,
+              ),
+              const Spacer(),
+              IconButton(
+                onPressed: (() {}),
+                icon: const Icon(Icons.account_balance_wallet_outlined),
+                iconSize: 30,
+              ),
+              const Spacer(),
+              IconButton(
+                onPressed: (() {}),
+                icon: const Icon(Icons.shopping_bag_outlined),
+                iconSize: 30,
+              ),
+            ],
+          )),
         ),
-        height: h * 0.07,
-        child: BottomAppBar(
-            child: Row(
-          children: [
-            IconButton(
-              onPressed: (() {}),
-              icon: const Icon(Icons.home),
-              iconSize: 30,
-            ),
-            const Spacer(),
-            IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Categories()),
-                );
-              },
-              icon: const Icon(Icons.category),
-              iconSize: 30,
-            ),
-            const Spacer(),
-            IconButton(
-              onPressed: (() {}),
-              icon: const Icon(Icons.person),
-              iconSize: 30,
-            ),
-            const Spacer(),
-            IconButton(
-              onPressed: (() {}),
-              icon: const Icon(Icons.account_balance_wallet_outlined),
-              iconSize: 30,
-            ),
-            const Spacer(),
-            IconButton(
-              onPressed: (() {}),
-              icon: const Icon(Icons.shopping_bag_outlined),
-              iconSize: 30,
-            ),
-          ],
-        )),
       ),
     );
   }
