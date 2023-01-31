@@ -54,7 +54,7 @@ class _CategoriesState extends State<Categories> {
                   padding: EdgeInsets.only(left: w * 0.025, right: w * 0.025),
                   height: h * 0.25,
                   width: w,
-                  color: Color.fromARGB(255, 255, 154, 154),
+                  color: Color.fromARGB(19, 36, 84, 243),
                   child: Row(children: [
                     Container(
                       width: w * 0.47,
@@ -117,7 +117,7 @@ class _CategoriesState extends State<Categories> {
                   padding: EdgeInsets.only(left: w * 0.025, right: w * 0.025),
                   height: h * 0.25,
                   width: w,
-                  color: Colors.amber,
+                  color: Color.fromARGB(19, 36, 84, 243),
                   child: Row(children: [
                     Container(
                       width: w * 0.47,
@@ -177,7 +177,7 @@ class _CategoriesState extends State<Categories> {
                   padding: EdgeInsets.only(left: w * 0.025, right: w * 0.025),
                   height: h * 0.25,
                   width: w,
-                  color: Colors.amber,
+                  color: Color.fromARGB(19, 36, 84, 243),
                   child: Row(children: [
                     Container(
                       width: w * 0.47,
@@ -236,7 +236,7 @@ class _CategoriesState extends State<Categories> {
                   padding: EdgeInsets.only(left: w * 0.025, right: w * 0.025),
                   height: h * 0.25,
                   width: w,
-                  color: Colors.amber,
+                  color: Color.fromARGB(19, 36, 84, 243),
                   child: Row(children: [
                     Container(
                       width: w * 0.47,
@@ -272,7 +272,7 @@ class _CategoriesState extends State<Categories> {
                   padding: EdgeInsets.only(left: w * 0.025, right: w * 0.025),
                   height: h * 0.25,
                   width: w,
-                  color: Colors.amber,
+                  color: Color.fromARGB(19, 36, 84, 243),
                   child: Row(children: [
                     Container(
                       width: w * 0.47,
@@ -308,11 +308,7 @@ class _CategoriesState extends State<Categories> {
                   padding: EdgeInsets.only(left: w * 0.025, right: w * 0.025),
                   height: h * 0.25,
                   width: w,
-                  color: Colors.amber,
-                  // decoration: BoxDecoration(
-                  //     borderRadius: BorderRadius.circular(h * 0.05),
-                  //     image: DecorationImage(
-                  //         image: AssetImage('img/cat1.PNG'), fit: BoxFit.fill)),
+                  color: Color.fromARGB(19, 36, 84, 243),
                   child: Row(children: [
                     Container(
                       width: w * 0.47,

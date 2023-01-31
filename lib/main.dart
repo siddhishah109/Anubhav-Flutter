@@ -1,5 +1,6 @@
 import 'package:ecommerce/Pages/categoriespage.dart';
 import 'package:ecommerce/Pages/homepage.dart';
+import 'package:ecommerce/Pages/products.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: Categories());
+    return const MaterialApp(home: AllProducts());
   }
 }
