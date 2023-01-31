@@ -391,7 +391,8 @@ class _HomePageState extends State<HomePage> {
                   pagination: SwiperPagination(
                       alignment: Alignment.bottomCenter,
                       builder: DotSwiperPaginationBuilder(
-                          color: Colors.white, activeColor: Colors.grey[400])),
+                          color: Colors.white,
+                          activeColor: Color.fromARGB(55, 238, 103, 103))),
                 )),
             Container(
                 height: h * 0.25,
