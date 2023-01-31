@@ -392,7 +392,7 @@ class _HomePageState extends State<HomePage> {
                       alignment: Alignment.bottomCenter,
                       builder: DotSwiperPaginationBuilder(
                           color: Colors.white,
-                          activeColor: Color.fromARGB(55, 238, 103, 103))),
+                          activeColor: Color.fromARGB(255, 238, 103, 103))),
                 )),
             Container(
                 height: h * 0.25,

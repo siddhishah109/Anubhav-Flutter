@@ -1,11 +1,30 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class Categories extends StatelessWidget {
+class Categories extends StatefulWidget {
   const Categories({super.key});
+
+  @override
+  State<Categories> createState() => _CategoriesState();
+}
+
+class _CategoriesState extends State<Categories> {
+  List<String> shoes = [
+    'img/s1.png',
+    'img/s2.png',
+    'img/s3.png',
+    'img/s4.png',
+  ];
+  List<String> men = ['img/m1.png', 'img/m2.png', 'img/m3.png'];
+  List<String> women = [
+    'img/w1.png',
+    'img/w2.png',
+    'img/w3.png',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +55,6 @@ class Categories extends StatelessWidget {
                   height: h * 0.25,
                   width: w,
                   color: Color.fromARGB(255, 255, 154, 154),
-                  // decoration: BoxDecoration(
-                  //     borderRadius: BorderRadius.circular(h * 0.05),
-                  //     image: DecorationImage(
-                  //         image: AssetImage('img/cat1.PNG'), fit: BoxFit.fill)),
                   child: Row(children: [
                     Container(
                       width: w * 0.47,
@@ -58,27 +73,42 @@ class Categories extends StatelessWidget {
                       width: w * 0.02,
                     ),
                     Container(
-                      width: w * 0.46,
-                      height: h * 0.23,
-
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(h * 0.04),
-                        border:
-                            Border.all(width: h * 0.003, color: Colors.black),
-                        // image: DecorationImage(
-                        //     image: AssetImage('img/shoesicon.png'),
-                        //     fit: BoxFit.cover)
-                      ),
-                      // child: CarouselSlider( options: CarouselOptions(
-                      //   autoPlay: true,
-                      // ),
-                      // items:imageList.map(
-                      //   (item)
-                      // ),
-
-                      // ),
-                    ),
+                        width: w * 0.46,
+                        height: h * 0.23,
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(h * 0.04),
+                          border:
+                              Border.all(width: h * 0.003, color: Colors.black),
+                          // image: DecorationImage(
+                          //     image: AssetImage('img/shoesicon.png'),
+                          //     fit: BoxFit.cover)
+                        ),
+                        child: Swiper(
+                          itemCount: 4,
+                          itemBuilder: ((context, index) {
+                            final image = shoes[index];
+                            return Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(h * 0.04),
+                                  color: const Color.fromARGB(255, 8, 8, 6),
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                      image,
+                                    ),
+                                  )),
+                            );
+                            // return swiperwidgwd();
+                          }),
+                          autoplay: true,
+                          pagination: const SwiperPagination(
+                              alignment: Alignment.bottomCenter,
+                              builder: DotSwiperPaginationBuilder(
+                                  color: Colors.white,
+                                  activeColor:
+                                      Color.fromARGB(255, 238, 241, 35))),
+                        )),
                   ])),
               SizedBox(
                 height: h * 0.02,
@@ -88,10 +118,6 @@ class Categories extends StatelessWidget {
                   height: h * 0.25,
                   width: w,
                   color: Colors.amber,
-                  // decoration: BoxDecoration(
-                  //     borderRadius: BorderRadius.circular(h * 0.05),
-                  //     image: DecorationImage(
-                  //         image: AssetImage('img/cat1.PNG'), fit: BoxFit.fill)),
                   child: Row(children: [
                     Container(
                       width: w * 0.47,
@@ -110,15 +136,39 @@ class Categories extends StatelessWidget {
                       width: w * 0.02,
                     ),
                     Container(
-                      width: w * 0.46,
-                      height: h * 0.23,
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(h * 0.04),
-                        border:
-                            Border.all(width: h * 0.003, color: Colors.black),
-                      ),
-                    ),
+                        width: w * 0.46,
+                        height: h * 0.23,
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(h * 0.04),
+                          border:
+                              Border.all(width: h * 0.003, color: Colors.black),
+                        ),
+                        child: Swiper(
+                          itemCount: 3,
+                          itemBuilder: ((context, index) {
+                            final image = men[index];
+                            return Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(h * 0.04),
+                                  color: const Color.fromARGB(255, 8, 8, 6),
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                      image,
+                                    ),
+                                  )),
+                            );
+                            // return swiperwidgwd();
+                          }),
+                          autoplay: true,
+                          pagination: const SwiperPagination(
+                              alignment: Alignment.bottomCenter,
+                              builder: DotSwiperPaginationBuilder(
+                                  color: Colors.white,
+                                  activeColor:
+                                      Color.fromARGB(255, 238, 241, 35))),
+                        )),
                   ])),
               SizedBox(
                 height: h * 0.02,
@@ -128,10 +178,6 @@ class Categories extends StatelessWidget {
                   height: h * 0.25,
                   width: w,
                   color: Colors.amber,
-                  // decoration: BoxDecoration(
-                  //     borderRadius: BorderRadius.circular(h * 0.05),
-                  //     image: DecorationImage(
-                  //         image: AssetImage('img/cat1.PNG'), fit: BoxFit.fill)),
                   child: Row(children: [
                     Container(
                       width: w * 0.47,
@@ -150,15 +196,38 @@ class Categories extends StatelessWidget {
                       width: w * 0.02,
                     ),
                     Container(
-                      width: w * 0.46,
-                      height: h * 0.23,
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(h * 0.04),
-                        border:
-                            Border.all(width: h * 0.003, color: Colors.black),
-                      ),
-                    ),
+                        width: w * 0.46,
+                        height: h * 0.23,
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(h * 0.04),
+                          border:
+                              Border.all(width: h * 0.003, color: Colors.black),
+                        ),
+                        child: Swiper(
+                          itemCount: 3,
+                          itemBuilder: ((context, index) {
+                            final image = women[index];
+                            return Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(h * 0.04),
+                                  color: const Color.fromARGB(255, 8, 8, 6),
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                      image,
+                                    ),
+                                  )),
+                            );
+                          }),
+                          autoplay: true,
+                          pagination: const SwiperPagination(
+                              alignment: Alignment.bottomCenter,
+                              builder: DotSwiperPaginationBuilder(
+                                  color: Colors.white,
+                                  activeColor:
+                                      Color.fromARGB(255, 238, 241, 35))),
+                        )),
                   ])),
               SizedBox(
                 height: h * 0.02,
