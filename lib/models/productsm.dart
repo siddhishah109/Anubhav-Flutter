@@ -1,6 +1,6 @@
 import 'categoriesm.dart';
 
-class productM {
+class ProductM {
   int? id;
   String? title;
   int? price;
@@ -8,7 +8,7 @@ class productM {
   CategoryM? category;
   List<String>? images;
 
-  productM(
+  ProductM(
       {this.id,
       this.title,
       this.price,
@@ -16,14 +16,13 @@ class productM {
       this.category,
       this.images});
 
-  productM.fromJson(Map<String, dynamic> json) {
+  ProductM.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
     price = json['price'];
     description = json['description'];
-    category = json['category'] != null
-        ? new CategoryM.fromJson(json['category'])
-        : null;
+    category =
+        json['category'] != null ? CategoryM.fromJson(json['category']) : null;
     images = json['images'].cast<String>();
   }
 
