@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
           ),
           ClipOval(
             child: Image.asset(
-              'img/anubhavicon.png',
+              'img/ic.png',
               height: 45,
               width: 45,
             ),

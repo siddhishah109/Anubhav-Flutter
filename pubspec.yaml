@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.2.1
   card_swiper: ^2.0.4
+  google_fonts: ^4.0.1
 
 dev_dependencies:
   flutter_test:

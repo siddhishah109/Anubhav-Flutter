@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'package:http/http.dart' as http;
 import 'package:ecommerce/Pages/searchpage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class _AllProductsState extends State<AllProducts> {
             ),
             ClipOval(
               child: Image.asset(
-                'img/anubhavicon.png',
+                'img/ic.png',
                 height: 45,
                 width: 45,
               ),
@@ -87,7 +87,7 @@ class _AllProductsState extends State<AllProducts> {
                   Container(
                       padding: EdgeInsets.only(left: h * 0.01),
                       child: Row(
-                        children: [
+                        children: const [
                           Text(
                             'shoes       ',
                             style: TextStyle(
