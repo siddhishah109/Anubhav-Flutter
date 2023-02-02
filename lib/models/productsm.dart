@@ -38,4 +38,10 @@ class ProductM {
 //     data['images'] = this.images;
 //     return data;
 //   }
+
+  // static List<ProductM> productsFromJson(List productContainer) {
+  // return productContainer.map((data) {
+  //   return ProductM.fromJson(data);
+  // }).toList();
+  //}
 }

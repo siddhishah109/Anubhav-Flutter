@@ -1,9 +1,12 @@
+import 'dart:ffi';
 import 'dart:ui';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce/Pages/AllProducts.dart';
 import 'package:ecommerce/Pages/categoriespage.dart';
-import 'package:ecommerce/swiperwidgwt.dart';
 import 'package:ecommerce/Pages/searchpage.dart';
+import 'package:ecommerce/api.dart';
+import 'package:ecommerce/models/productsm.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  //List<ProductM> productList = [];
   List<String> images = [
     'images/b1.png',
     'images/b2.png',
@@ -22,6 +26,18 @@ class _HomePageState extends State<HomePage> {
     'images/b4.png',
     'images/b5.png',
   ];
+  // @override
+  // void didChangeDependencies() {
+  // ignore: todo
+  //   // TODO: implement didChangeDependencies
+  //   // Api.allproducts();
+  //   getproduct();
+  //   super.didChangeDependencies();
+  // }
+
+  // Future<void> getproduct() async {
+  //   productList = await Api.allproducts();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -53,16 +69,17 @@ class _HomePageState extends State<HomePage> {
           const Spacer(),
           const Spacer(),
           IconButton(
-            onPressed: (() => const SearchPage()),
+            onPressed: (() {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const SearchPage()));
+            }),
             icon: const Icon(Icons.search),
             iconSize: w * 0.08,
           ),
           IconButton(
             onPressed: (() {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SearchPage()),
-              );
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const AllProducts()));
             }),
             icon: const Icon(Icons.favorite),
             color: const Color.fromARGB(255, 244, 54, 117),
@@ -149,12 +166,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 onTap: () {
                   Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) {
-                      return const Categories();
-                    }),
-                  );
-
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Categories()));
                   // open categories
                 },
               ),
@@ -388,7 +402,7 @@ class _HomePageState extends State<HomePage> {
                     // return swiperwidgwd();
                   }),
                   autoplay: true,
-                  pagination: SwiperPagination(
+                  pagination: const SwiperPagination(
                       alignment: Alignment.bottomCenter,
                       builder: DotSwiperPaginationBuilder(
                           color: Colors.white,
@@ -446,10 +460,8 @@ class _HomePageState extends State<HomePage> {
               const Spacer(),
               IconButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Categories()),
-                  );
+                  // Navigator.push(context,
+                  // MaterialPageRoute(builder: (context) => const Categories()));
                 },
                 icon: const Icon(Icons.category),
                 iconSize: 30,

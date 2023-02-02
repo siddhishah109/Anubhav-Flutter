@@ -1,4 +1,6 @@
 import 'dart:ui';
+import 'package:ecommerce/models/productsm.dart';
+import 'package:ecommerce/productCard.dart';
 import 'package:http/http.dart' as http;
 import 'package:ecommerce/Pages/searchpage.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,6 +8,7 @@ import 'package:flutter/material.dart';
 
 class AllProducts extends StatefulWidget {
   const AllProducts({super.key});
+  //final List<ProductM> productList;
 
   @override
   State<AllProducts> createState() => _AllProductsState();
@@ -63,56 +66,24 @@ class _AllProductsState extends State<AllProducts> {
             )
           ],
         ),
-        body: SingleChildScrollView(
-          child: GridTile(
-              child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Container(
-              padding: EdgeInsets.all(w * 0.01),
-              width: w * 0.48,
-              height: h * 0.3,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20), color: Colors.amber),
-              child: Column(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(18)),
-                    height: h * 0.22,
-                    width: w * 0.45,
-
-                    //img
-                  ),
-                  Container(
-                      padding: EdgeInsets.only(left: h * 0.01),
-                      child: Row(
-                        children: const [
-                          Text(
-                            'shoes       ',
-                            style: TextStyle(
-                              fontSize: 25,
-                            ),
-                          ),
-                          Text(
-                            '400',
-                            textAlign: TextAlign.end,
-                            style: TextStyle(
-                              fontSize: 25,
-                            ),
-                          ),
-                        ],
-                      )
-
-                      //title
-                      ),
-                  Container(
-                      //rating
-                      )
-                ],
-              ),
-            ),
-          )),
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('img/back.png'), fit: BoxFit.fill),
+          ),
+          child: SingleChildScrollView(
+              child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: 5,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 0,
+                      mainAxisSpacing: 0,
+                      childAspectRatio: 0.7),
+                  itemBuilder: ((context, index) {
+                    return const ProductCard();
+                  }))),
         ));
   }
 }
