@@ -1,3 +1,4 @@
+import 'package:ecommerce/Pages/AllProducts.dart';
 import 'package:ecommerce/Pages/categoriespage.dart';
 import 'package:ecommerce/Pages/homepage.dart';
 import 'package:ecommerce/Pages/products.dart';
@@ -18,11 +19,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData(
-            primaryColor: Color.fromARGB(78, 172, 206, 226),
-            bottomAppBarTheme: BottomAppBarTheme(
+            primaryColor: const Color.fromARGB(78, 172, 206, 226),
+            bottomAppBarTheme: const BottomAppBarTheme(
                 // color: Color.fromARGB(78, 172, 206, 226),
 
                 )),
-        home: HomePage());
+        home: AllProducts(
+          productList: [],
+        ));
   }
 }
