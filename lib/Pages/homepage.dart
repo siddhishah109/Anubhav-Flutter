@@ -68,13 +68,18 @@ class _HomePageState extends State<HomePage> {
           const Spacer(),
           const Spacer(),
           const Spacer(),
-          IconButton(
-            onPressed: (() {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const SearchPage()));
-            }),
-            icon: const Icon(Icons.search),
-            iconSize: w * 0.08,
+          Hero(
+            tag: '23424',
+            child: IconButton(
+              onPressed: (() {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SearchPage()));
+              }),
+              icon: const Icon(Icons.search),
+              iconSize: w * 0.08,
+            ),
           ),
           IconButton(
             onPressed: (() {

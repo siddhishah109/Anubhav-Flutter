@@ -36,16 +36,13 @@ class _CategoriesState extends State<Categories> {
                 Navigator.pop(context);
               }),
               icon: const Icon(Icons.arrow_back)),
-          title: const Text(
+          title: Text(
             'Categories',
             textAlign: TextAlign.center,
-            //  style: GoogleFonts.getFont('Lobster')
-            // lobster(
-            //   textStyle: TextStyle(
-            //     color: Colors.white,
-            //     fontSize: 4,
-            //   )
-            // )
+            style: GoogleFonts.pacifico(
+              fontStyle: FontStyle.normal,
+              fontSize: 34,
+            ),
           ),
           backgroundColor: Color.fromARGB(92, 172, 206, 226),
         ),
