@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     'images/b2.png',
     'images/b3.png',
     'images/b4.png',
-    'images/b5.png',
+    // 'images/b5.png',
   ];
   // @override
   // void didChangeDependencies() {
@@ -182,7 +182,7 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 contentPadding: EdgeInsets.only(left: w * 0.05),
-                leading: Icon(
+                leading: const Icon(
                   Icons.account_balance_wallet_outlined,
                   size: 27,
                 ),
@@ -233,7 +233,7 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 contentPadding: EdgeInsets.only(left: w * 0.05),
-                leading: Icon(
+                leading: const Icon(
                   Icons.contact_support_outlined,
                   size: 25,
                 ),
@@ -247,7 +247,7 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 contentPadding: EdgeInsets.only(left: w * 0.05),
-                leading: Icon(
+                leading: const Icon(
                   Icons.logout,
                   size: 25,
                 ),
@@ -363,7 +363,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.transparent,
                 ),
                 child: Swiper(
-                  itemCount: 5,
+                  itemCount: 4,
                   itemBuilder: ((context, index) {
                     final image = images[index];
                     return Container(
@@ -384,6 +384,42 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.white,
                           activeColor: Color.fromARGB(255, 238, 103, 103))),
                 )),
+            SizedBox(
+              height: h * 0.01,
+              width: w,
+            ),
+            Container(
+              width: w * 0.8,
+              height: h * 0.07,
+              child: const Image(
+                image: AssetImage('img/brand_banner.png'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: h * 0.01),
+              height: h * 0.23,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container(
+                    child: Image(image: AssetImage('img/brand1.png')),
+                  ),
+                  Container(
+                    child: Image(image: AssetImage('img/brand2.png')),
+                  ),
+                  Container(
+                    child: Image(image: AssetImage('img/brand3.png')),
+                  ),
+                  Container(
+                    child: Image(image: AssetImage('img/brand4.png')),
+                  ),
+                  Container(
+                    child: Image(image: AssetImage('img/brand5.png')),
+                  ),
+                ],
+              ),
+            ),
             Container(
                 height: h * 0.25,
                 width: w * 0.9,
@@ -415,60 +451,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       )),
-      //   bottomNavigationBar: Theme(
-      //     data: Theme.of(context).copyWith(
-      //         // canvasColor: Colors.amber,
-      //         // primaryColor: Colors.red,
-      //         ),
-      //     child: Container(
-      //       decoration: const BoxDecoration(
-      //         color: Color.fromARGB(78, 172, 206, 226),
-      //       ),
-      //       height: h * 0.07,
-      //       child: BottomAppBar(
-      //           child: Row(
-      //         children: [
-      //           IconButton(
-      //             onPressed: (() {}),
-      //             icon: const Icon(Icons.home),
-      //             iconSize: 30,
-      //           ),
-      //           const Spacer(),
-      //           Hero(
-      //             tag: new Text('c2'),
-      //             child: IconButton(
-      //               onPressed: () {
-      //                 Navigator.push(
-      //                     context,
-      //                     MaterialPageRoute(
-      //                         builder: (context) => const Categories()));
-      //               },
-      //               icon: const Icon(Icons.category),
-      //               iconSize: 30,
-      //             ),
-      //           ),
-      //           const Spacer(),
-      //           IconButton(
-      //             onPressed: (() {}),
-      //             icon: const Icon(Icons.person),
-      //             iconSize: 30,
-      //           ),
-      //           const Spacer(),
-      //           IconButton(
-      //             onPressed: (() {}),
-      //             icon: const Icon(Icons.account_balance_wallet_outlined),
-      //             iconSize: 30,
-      //           ),
-      //           const Spacer(),
-      //           IconButton(
-      //             onPressed: (() {}),
-      //             icon: const Icon(Icons.shopping_bag_outlined),
-      //             iconSize: 30,
-      //           ),
-      //         ],
-      //       )),
-      //     ),
-      //   ),
     );
   }
 }
