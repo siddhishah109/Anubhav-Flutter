@@ -24,6 +24,6 @@ class MyApp extends StatelessWidget {
                 // color: Color.fromARGB(78, 172, 206, 226),
 
                 )),
-        home: Categories());
+        home: HomePage());
   }
 }

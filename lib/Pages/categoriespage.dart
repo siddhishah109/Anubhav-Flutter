@@ -69,7 +69,6 @@ class _CategoriesState extends State<Categories> {
                           width: w * 0.47,
                           height: h * 0.23,
                           decoration: BoxDecoration(
-                              color: Colors.black,
                               borderRadius: BorderRadius.circular(h * 0.04),
                               border: Border.all(
                                   width: h * 0.003, color: Colors.black),

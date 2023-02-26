@@ -39,7 +39,11 @@ dependencies:
   carousel_slider: ^4.2.1
   card_swiper: ^2.0.4
   google_fonts: ^4.0.1
-
+  flutter_launcher_icons: ^0.12.0
+flutter_icon:
+  android: "launcher_icon"
+  ios: true
+  image_path: "img/ic.png"
 dev_dependencies:
   flutter_test:
     sdk: flutter

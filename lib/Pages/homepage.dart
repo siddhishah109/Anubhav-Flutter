@@ -389,7 +389,7 @@ class _HomePageState extends State<HomePage> {
               width: w,
             ),
             Container(
-              width: w * 0.8,
+              width: w * 0.9,
               height: h * 0.07,
               child: const Image(
                 image: AssetImage('img/brand_banner.png'),

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key});
@@ -36,10 +37,11 @@ class ProductCard extends StatelessWidget {
                   Container(
                     width: w * 0.29,
                     // color: Colors.amber,
-                    child: const Text(
+                    child: Text(
                       "Title",
                       textAlign: TextAlign.left,
-                      style: TextStyle(fontSize: 28),
+                      style: GoogleFonts.pacifico(
+                          fontStyle: FontStyle.normal, fontSize: 25),
                     ),
                   ),
                   IconButton(
