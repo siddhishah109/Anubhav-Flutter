@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 
 class AllProducts extends StatefulWidget {
   const AllProducts({super.key});
-  //final List<ProductM> productList;
 
   @override
   State<AllProducts> createState() => _AllProductsState();
@@ -44,7 +43,12 @@ class _AllProductsState extends State<AllProducts> {
             const Spacer(),
             const Spacer(),
             IconButton(
-              onPressed: (() => const SearchPage()),
+              onPressed: (() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SearchPage()),
+                );
+              }),
               icon: const Icon(Icons.search),
               iconSize: w * 0.08,
             ),
@@ -52,7 +56,7 @@ class _AllProductsState extends State<AllProducts> {
               onPressed: (() {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SearchPage()),
+                  MaterialPageRoute(builder: (context) => SearchPage()),
                 );
               }),
               icon: const Icon(Icons.favorite),

@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class SearchPage extends StatefulWidget {
-  const SearchPage({super.key});
+class SearchPage extends StatelessWidget {
+  SearchPage({super.key});
+  final fieldText = TextEditingController();
+  void clearText() {
+    fieldText.clear();
+  }
 
-  @override
-  State<SearchPage> createState() => _SearchPageState();
-}
-
-class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -38,7 +37,7 @@ class _SearchPageState extends State<SearchPage> {
                 fillColor: Colors.white,
                 prefixIcon: Icon(Icons.search),
                 suffixIcon:
-                    IconButton(onPressed: (() {}), icon: Icon(Icons.clear)),
+                    IconButton(onPressed: (clearText), icon: Icon(Icons.clear)),
                 hintText: 'Search by Product',
                 contentPadding: EdgeInsets.all(w * 0.02),
               ),

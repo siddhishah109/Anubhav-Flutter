@@ -18,7 +18,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  //List<ProductM> productList = [];
   List<String> images = [
     'images/b1.png',
     'images/b2.png',
@@ -26,18 +25,6 @@ class _HomePageState extends State<HomePage> {
     'images/b4.png',
     // 'images/b5.png',
   ];
-  // @override
-  // void didChangeDependencies() {
-  // ignore: todo
-  //   // TODO: implement didChangeDependencies
-  //   // Api.allproducts();
-  //   getproduct();
-  //   super.didChangeDependencies();
-  // }
-
-  // Future<void> getproduct() async {
-  //   productList = await Api.allproducts();
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -72,10 +59,8 @@ class _HomePageState extends State<HomePage> {
             tag: '23424',
             child: IconButton(
               onPressed: (() {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SearchPage()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SearchPage()));
               }),
               icon: const Icon(Icons.search),
               iconSize: w * 0.08,

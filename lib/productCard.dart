@@ -4,14 +4,19 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ProductCard extends StatelessWidget {
+class ProductCard extends StatefulWidget {
   const ProductCard({super.key});
-  // final title, imageUrl;
 
+  @override
+  State<ProductCard> createState() => _ProductCardState();
+}
+
+class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
+    Color _favIconColor = Colors.grey;
     return Padding(
       padding: const EdgeInsets.all(7.0),
       child: Container(
@@ -45,11 +50,21 @@ class ProductCard extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                      iconSize: 30,
-                      color: const Color.fromARGB(255, 244, 54, 117),
-                      alignment: Alignment.topRight,
-                      icon: const Icon(Icons.favorite),
-                      onPressed: (() {})),
+                    iconSize: 30,
+                    tooltip: 'Add to favorite',
+                    color: _favIconColor,
+                    alignment: Alignment.topRight,
+                    icon: const Icon(Icons.favorite),
+                    onPressed: () {
+                      setState(() {
+                        if (_favIconColor == Colors.grey) {
+                          _favIconColor = Color.fromARGB(255, 255, 14, 134);
+                        } else {
+                          _favIconColor = Colors.grey;
+                        }
+                      });
+                    },
+                  )
                 ],
               ),
             ),
