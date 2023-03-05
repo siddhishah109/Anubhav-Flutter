@@ -55,16 +55,13 @@ class _HomePageState extends State<HomePage> {
           const Spacer(),
           const Spacer(),
           const Spacer(),
-          Hero(
-            tag: '23424',
-            child: IconButton(
-              onPressed: (() {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SearchPage()));
-              }),
-              icon: const Icon(Icons.search),
-              iconSize: w * 0.08,
-            ),
+          IconButton(
+            onPressed: (() {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SearchPage()));
+            }),
+            icon: const Icon(Icons.search),
+            iconSize: w * 0.08,
           ),
           IconButton(
             onPressed: (() {
@@ -275,7 +272,7 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       padding: const EdgeInsets.all(6),
                       child: FloatingActionButton(
-                        onPressed: (() {}),
+                        onPressed: () {},
                         elevation: 0,
                         backgroundColor: const Color.fromARGB(255, 27, 27, 26),
                         child: const ClipOval(
@@ -433,6 +430,12 @@ class _HomePageState extends State<HomePage> {
                           ))
                       .toList(),
                 ))),
+            // Container(
+            //   child: ElevatedButton(
+            //     onPressed: allproducts,
+            //     child: const Text("press"),
+            //   ),
+            // )
           ],
         ),
       )),

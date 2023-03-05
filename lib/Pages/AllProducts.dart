@@ -1,12 +1,10 @@
 import 'dart:ui';
 import 'package:ecommerce/models/productsm.dart';
 import 'package:ecommerce/productCard.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:ecommerce/Pages/searchpage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce/api.dart';
 
 class AllProducts extends StatefulWidget {
   const AllProducts({super.key});
@@ -18,7 +16,6 @@ class AllProducts extends StatefulWidget {
 class _AllProductsState extends State<AllProducts> {
   List<dynamic> _products = [];
   bool _loading = false;
-  Color _favIconColor = Colors.grey;
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -76,7 +73,7 @@ class _AllProductsState extends State<AllProducts> {
           ],
         ),
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('img/back.png'), fit: BoxFit.fill),
           ),
@@ -84,96 +81,15 @@ class _AllProductsState extends State<AllProducts> {
               child: GridView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: AsyncSnapshot.data.length,
+                  itemCount: 5,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 0,
                       mainAxisSpacing: 0,
                       childAspectRatio: 0.7),
                   itemBuilder: ((context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(7.0),
-                      child: Container(
-                        padding: const EdgeInsets.all(1),
-                        decoration: const BoxDecoration(
-                            color: Color.fromARGB(38, 112, 4, 253),
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30))),
-                        child: Column(
-                          children: [
-                            Container(
-                              height: h * 0.23,
-                              decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(30)),
-                                  color: Color.fromARGB(255, 218, 205, 205),
-                                  image: DecorationImage(
-                                      image: AssetImage("img/s1.png"),
-                                      fit: BoxFit.cover)),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.only(
-                                  top: 1, left: 8, right: 8),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    width: w * 0.29,
-                                    // color: Colors.amber,
-                                    child: Text(
-                                      _products[index]['id'],
-                                      textAlign: TextAlign.left,
-                                      style: GoogleFonts.pacifico(
-                                          fontStyle: FontStyle.normal,
-                                          fontSize: 25),
-                                    ),
-                                  ),
-                                  IconButton(
-                                    iconSize: 30,
-                                    tooltip: 'Add to favorite',
-                                    color: _favIconColor,
-                                    alignment: Alignment.topRight,
-                                    icon: const Icon(Icons.favorite),
-                                    onPressed: () {
-                                      setState(() {
-                                        if (_favIconColor == Colors.grey) {
-                                          _favIconColor =
-                                              Color.fromARGB(255, 255, 14, 134);
-                                        } else {
-                                          _favIconColor = Colors.grey;
-                                        }
-                                      });
-                                    },
-                                  )
-                                ],
-                              ),
-                            ),
-                            Row(
-                              children: [
-                                Container(
-                                  width: w * 0.43,
-                                  child: Text(
-                                    "\$108",
-                                    textAlign: TextAlign.right,
-                                    style: TextStyle(fontSize: 20),
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                    );
-                    ;
-                  }))
-              // : Container(
-              //     child: Center(
-              //         child: _loading
-              //             ? CircularProgressIndicator()
-              //             : ElevatedButton(
-              //                 onPressed: allproducts,
-              //                 child: const Text("press"))),
-              //   )
-              ),
+                    return const ProductCard();
+                  }))),
         ));
   }
 }
