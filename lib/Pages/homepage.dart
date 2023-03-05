@@ -430,12 +430,6 @@ class _HomePageState extends State<HomePage> {
                           ))
                       .toList(),
                 ))),
-            // Container(
-            //   child: ElevatedButton(
-            //     onPressed: allproducts,
-            //     child: const Text("press"),
-            //   ),
-            // )
           ],
         ),
       )),
