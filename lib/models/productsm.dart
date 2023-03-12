@@ -16,7 +16,7 @@ class products {
       this.image,
       this.rating});
 
-  products.fromJson(Map<dynamic, dynamic> json) {
+  products.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
     price = json['price'];
