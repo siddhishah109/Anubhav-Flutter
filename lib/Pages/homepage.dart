@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:ui';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -9,6 +8,7 @@ import 'package:ecommerce/api.dart';
 import 'package:ecommerce/models/productsm.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'dart:ffi';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

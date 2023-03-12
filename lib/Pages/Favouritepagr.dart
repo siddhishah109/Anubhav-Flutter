@@ -1,27 +1,18 @@
-import 'dart:ui';
-import 'package:ecommerce/Pages/Favouritepagr.dart';
-import 'package:ecommerce/api.dart';
-import 'package:ecommerce/models/productsm.dart';
-import 'package:ecommerce/productCard.dart';
-import 'package:ecommerce/providers/favourite_provider.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:http/http.dart' as http;
 import 'package:ecommerce/Pages/searchpage.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class AllProducts extends StatefulWidget {
-  const AllProducts({super.key});
+import '../providers/favourite_provider.dart';
+
+class MyFavouriteItemScreen extends StatefulWidget {
+  const MyFavouriteItemScreen({super.key});
 
   @override
-  State<AllProducts> createState() => _AllProductsState();
+  State<MyFavouriteItemScreen> createState() => _MyFavouriteItemScreenState();
 }
 
-class _AllProductsState extends State<AllProducts> {
-  Color _favIconColor = Colors.grey;
-
-  // List<int> selectedItems = [];
+class _MyFavouriteItemScreenState extends State<MyFavouriteItemScreen> {
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -89,7 +80,7 @@ class _AllProductsState extends State<AllProducts> {
                 child: GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: 6,
+              itemCount: FavouriteProvider.selectedItems.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 0,
